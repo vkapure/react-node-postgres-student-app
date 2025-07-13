@@ -1,0 +1,21 @@
+# Root level
+.env
+.DS_Store
+
+# Node.js - backend
+/backend/node_modules/
+backend/.env
+backend/dist/
+backend/.DS_Store
+
+# React (Vite) - frontend
+/frontend/node_modules/
+frontend/.env
+frontend/dist/
+frontend/.DS_Store
+
+# Logs
+*.log
+
+# OS specific
+Thumbs.db

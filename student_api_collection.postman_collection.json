@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Student CRUD API",
+    "_postman_id": "crud-api-collection",
+    "description": "CRUD operations and pagination for student management.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Students (Paginated)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/students?page=1&limit=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "students"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Student by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/students/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "students",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\",\n  \"age\": 18,\n  \"marks\": [\n    { \"subject\": \"Math\", \"score\": 90 },\n    { \"subject\": \"Science\", \"score\": 85 }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/students",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice Updated\",\n  \"email\": \"alice@example.com\",\n  \"age\": 19\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/students/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "students",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:5000/students/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "students",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}
